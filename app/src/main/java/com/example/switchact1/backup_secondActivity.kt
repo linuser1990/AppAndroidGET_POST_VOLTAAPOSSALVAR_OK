@@ -16,7 +16,7 @@ import java.net.URL
 import org.json.JSONArray
 import org.json.JSONException
 
-class SecondActivity : AppCompatActivity() {
+class backup_secondActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
@@ -35,7 +35,7 @@ class SecondActivity : AppCompatActivity() {
         GlobalScope.launch(Dispatchers.IO) {
             try {
                 // URL do seu endpoint
-                val endpointUrl = "http://192.168.254.48:4000"
+                val endpointUrl = "https://45.237.118.118:4000"
 
                 // Realize a chamada de rede e obtenha os resultados JSON
                 val jsonString = fetchDataFromEndpoint(endpointUrl)
@@ -46,7 +46,7 @@ class SecondActivity : AppCompatActivity() {
                 // Atualize a UI principal na thread principal usando runOnUiThread
                 runOnUiThread {
                     // Crie um ArrayAdapter para associar os dados ao ListView
-                    val adapter = ArrayAdapter(this@SecondActivity, android.R.layout.simple_list_item_1, dados)
+                    val adapter = ArrayAdapter(this@backup_secondActivity, android.R.layout.simple_list_item_1, dados)
 
                     // Defina o adaptador para o ListView
                     listView.adapter = adapter
