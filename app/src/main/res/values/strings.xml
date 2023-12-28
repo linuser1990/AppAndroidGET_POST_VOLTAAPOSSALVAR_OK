@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">SwitchAct1</string>
+    <string name="app_name">MVG-Software</string>
+    <string name="btn_FormAdd">Adicionar</string>
+    <string name="btn_Save">Salvar</string>
+    <string name="btn_LIST">Lista</string>
 </resources>
