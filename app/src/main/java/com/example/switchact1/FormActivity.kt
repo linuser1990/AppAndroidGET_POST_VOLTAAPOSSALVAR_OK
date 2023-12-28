@@ -50,7 +50,7 @@ class FormActivity : AppCompatActivity() {
 
     private fun sendDataToEndpoint(textToSend: String) {
         try {
-            val url = "http://192.168.254.48:4000/"
+            val url = "http://45.237.118.118:4000"
             val connection = URL(url).openConnection() as HttpURLConnection
 
             // Set the request method to POST

@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--ACEITA REQUISIÇÃO DE QUALQUER LUGAR DA INTERNET-->
 <network-security-config>
-    <domain-config cleartextTrafficPermitted="true">
-        <!--  teste git Allow cleartext traffic for the specified domain (replace with your server's domain) -->
-        <domain includeSubdomains="true">192.168.254.48</domain>
-    </domain-config>
+    <base-config cleartextTrafficPermitted="true" />
 </network-security-config>
+
+<!-- ACEITA REQUISIÇÃO DE APENAS UM CLIENTE ESPECIFICO-->
+<!-- <network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+
+        <domain includeSubdomains="true">45.237.118.118</domain>
+    </domain-config>
+</network-security-config> -->

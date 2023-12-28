@@ -35,7 +35,7 @@ class SecondActivity : AppCompatActivity() {
         GlobalScope.launch(Dispatchers.IO) {
             try {
                 // URL do seu endpoint
-                val endpointUrl = "http://192.168.254.48:4000"
+                val endpointUrl = "http://45.237.118.118:4000"
 
                 // Realize a chamada de rede e obtenha os resultados JSON
                 val jsonString = fetchDataFromEndpoint(endpointUrl)
