@@ -1,10 +1,7 @@
 package com.example.switchact1
 
-import android.content.Intent
 import android.os.Bundle
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.ListView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -13,43 +10,34 @@ import java.io.BufferedReader
 import java.io.InputStreamReader
 import java.net.HttpURLConnection
 import java.net.URL
-import org.json.JSONArray
 import org.json.JSONException
+import org.json.JSONObject
 
-class backup_secondActivity : AppCompatActivity() {
+class DetalhesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_second)
+        setContentView(R.layout.activity_detalhes)
 
-        val buttonClick = findViewById<Button>(R.id.button)
-        buttonClick.setOnClickListener {
-            val intent = Intent(this, FormActivity::class.java)
-            startActivity(intent)
-            println("chamou")
-        }
+        // Obter o código passado como extra
+        val codigo = intent.getIntExtra("codigo", -1)
 
-        // Obtenha referência ao ListView
-        val listView = findViewById<ListView>(R.id.list_view)
+        // Montar a URL com base no código
+        val endpointUrl = "http://45.237.118.118:4000/$codigo"
 
         // Use o GlobalScope para realizar a chamada de rede
         GlobalScope.launch(Dispatchers.IO) {
             try {
-                // URL do seu endpoint
-                val endpointUrl = "https://45.237.118.118:4000"
-
                 // Realize a chamada de rede e obtenha os resultados JSON
                 val jsonString = fetchDataFromEndpoint(endpointUrl)
 
-                // Parse JSON e obtenha os dados que você deseja exibir no ListView
+                // Parse JSON e obtenha os dados que você deseja exibir
                 val dados = parseJsonResult(jsonString)
 
                 // Atualize a UI principal na thread principal usando runOnUiThread
                 runOnUiThread {
-                    // Crie um ArrayAdapter para associar os dados ao ListView
-                    val adapter = ArrayAdapter(this@backup_secondActivity, android.R.layout.simple_list_item_1, dados)
-
-                    // Defina o adaptador para o ListView
-                    listView.adapter = adapter
+                    // Atualize a UI com os detalhes do item, por exemplo, usando TextViews
+                    val detalhesTextView = findViewById<TextView>(R.id.text_detalhes)
+                    detalhesTextView.text = "Detalhes do Item:\n$dados"
                 }
             } catch (e: Exception) {
                 // Handle error
@@ -58,28 +46,25 @@ class backup_secondActivity : AppCompatActivity() {
         }
     }
 
-    private fun parseJsonResult(jsonResult: String): Array<String> {
-        val resultsList = mutableListOf<String>()
+    private fun parseJsonResult(jsonResult: String): String {
+        var detalhes = ""
 
         if (jsonResult.isNotEmpty()) {
             try {
-                // Attempt to parse JSON array
-                val jsonArray = JSONArray(jsonResult)
+                // Parse JSON object
+                val jsonObject = JSONObject(jsonResult)
+                val codigo = jsonObject.getInt("codigo")
+                val nome = jsonObject.getString("nome")
+                val cpf = jsonObject.getString("cpf")
 
-                for (i in 0 until jsonArray.length()) {
-                    val jsonObject = jsonArray.getJSONObject(i)
-                    val codigo = jsonObject.getInt("codigo")
-                    val nome = jsonObject.getString("nome")
-
-                    resultsList.add("Código: $codigo\nNome: $nome")
-                }
+                detalhes = "Código: $codigo\nNome: $nome\nCPF: $cpf"
             } catch (e: JSONException) {
                 // Handle JSON parsing error
                 e.printStackTrace()
             }
         }
 
-        return resultsList.toTypedArray()
+        return detalhes
     }
 
     // Função para buscar dados JSON do endpoint especificado
@@ -102,5 +87,3 @@ class backup_secondActivity : AppCompatActivity() {
         }
     }
 }
-
-
