@@ -139,6 +139,9 @@ class SecondActivity : AppCompatActivity() {
         // e atualizando o adaptador do ListView
         // ...
         fetchDataAndRefreshList()
+
+        // Exiba um Toast informando que o item foi excluído com sucesso
+        Toast.makeText(this, "Item excluído com sucesso!!!", Toast.LENGTH_SHORT).show()
     }
 
     private fun deleteItemFromEndpoint(deleteEndpointUrl: String): Int {

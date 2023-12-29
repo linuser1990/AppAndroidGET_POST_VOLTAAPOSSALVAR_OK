@@ -7,10 +7,16 @@
     android:padding="16dp">
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editTextNome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Insira os dados..."
+        android:layout_marginBottom="8dp"/>
+    <EditText
+        android:id="@+id/editTextCPF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Insira o CPF..."
         android:layout_marginBottom="8dp"/>
 
     <Button
