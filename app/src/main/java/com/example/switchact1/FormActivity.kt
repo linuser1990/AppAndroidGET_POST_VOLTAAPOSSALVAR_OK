@@ -2,6 +2,8 @@ package com.example.switchact1
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -101,4 +103,29 @@ class FormActivity : AppCompatActivity() {
             e.printStackTrace()
         }
     }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.menu_home -> {
+                // Handle the click on the home icon
+                startActivity(Intent(this, MainActivity::class.java))
+                return true
+            }
+            R.id.menu_second_activity -> {
+                startActivity(Intent(this, SecondActivity::class.java))
+                return true
+            }
+            R.id.menu_form_activity -> {
+                startActivity(Intent(this, FormActivity::class.java))
+                return true
+            }
+            else -> return super.onOptionsItemSelected(item)
+        }
+    }
+
 }

@@ -1,0 +1,23 @@
+<!-- main_menu.xml -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_home"
+        android:icon="@drawable/ic_home"
+        android:title="Home"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_dropdown"
+        android:title="Ir Para">
+        <menu>
+            <item
+                android:id="@+id/menu_second_activity"
+                android:title="Second Activity" />
+            <item
+                android:id="@+id/menu_form_activity"
+                android:title="Form Activity" />
+        </menu>
+    </item>
+</menu>
