@@ -92,8 +92,8 @@ class FormActivity : AppCompatActivity() {
                         Toast.LENGTH_SHORT
                     ).show()
 
-                    // Navigate to the SecondActivity
-                    val intent = Intent(this@FormActivity, SecondActivity::class.java)
+                    // Navigate to the ListaActivity
+                    val intent = Intent(this@FormActivity, ListaActivity::class.java)
                     startActivity(intent)
                 }
             } else {
@@ -119,8 +119,8 @@ class FormActivity : AppCompatActivity() {
                 startActivity(Intent(this, MainActivity::class.java))
                 return true
             }
-            R.id.menu_second_activity -> {
-                startActivity(Intent(this, SecondActivity::class.java))
+            R.id.menu_lista_activity -> {
+                startActivity(Intent(this, ListaActivity::class.java))
                 return true
             }
             R.id.menu_form_activity -> {

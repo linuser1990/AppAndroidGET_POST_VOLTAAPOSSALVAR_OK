@@ -9,8 +9,8 @@
         app:showAsAction="always" />
 
     <item
-        android:id="@+id/menu_second_activity"
-        android:title="Second Activity"
+        android:id="@+id/menu_lista_activity"
+        android:title="Lista Activity"
         app:showAsAction="never" />
 
     <item

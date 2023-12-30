@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
         val buttonClick = findViewById<Button>(R.id.button_click)
         buttonClick.setOnClickListener {
-            val intent = Intent(this, SecondActivity::class.java)
+            val intent = Intent(this, ListaActivity::class.java)
             startActivity(intent)
             println("chamou")
         }
@@ -28,8 +28,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.menu_second_activity -> {
-                startActivity(Intent(this, SecondActivity::class.java))
+            R.id.menu_lista_activity -> {
+                startActivity(Intent(this, ListaActivity::class.java))
                 return true
             }
             R.id.menu_form_activity -> {

@@ -20,7 +20,7 @@ import java.net.URL
 import org.json.JSONArray
 import org.json.JSONException
 
-class SecondActivity : AppCompatActivity() {
+class ListaActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
@@ -80,7 +80,7 @@ class SecondActivity : AppCompatActivity() {
                 // Atualize a UI principal na thread principal usando runOnUiThread
                 runOnUiThread {
                     // Crie um ArrayAdapter para associar os dados ao ListView
-                    val adapter = ArrayAdapter(this@SecondActivity, android.R.layout.simple_list_item_1, dados)
+                    val adapter = ArrayAdapter(this@ListaActivity, android.R.layout.simple_list_item_1, dados)
 
                     // Defina o adaptador para o ListView
                     listView.adapter = adapter
@@ -125,7 +125,7 @@ class SecondActivity : AppCompatActivity() {
                     } else {
                         // Trate o erro, se necessário
                         // Exemplo: exibir uma mensagem de erro
-                        Toast.makeText(this@SecondActivity, "Falha ao excluir item", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@ListaActivity, "Falha ao excluir item", Toast.LENGTH_SHORT).show()
                     }
                 }
             } catch (e: Exception) {
@@ -213,7 +213,7 @@ class SecondActivity : AppCompatActivity() {
                 // Atualize a UI principal na thread principal usando runOnUiThread
                 runOnUiThread {
                     // Crie um ArrayAdapter para associar os dados ao ListView
-                    val adapter = ArrayAdapter(this@SecondActivity, android.R.layout.simple_list_item_1, dados)
+                    val adapter = ArrayAdapter(this@ListaActivity, android.R.layout.simple_list_item_1, dados)
 
                     // Obtenha referência ao ListView
                     val listView = findViewById<ListView>(R.id.list_view)
@@ -240,8 +240,8 @@ class SecondActivity : AppCompatActivity() {
                 startActivity(Intent(this, MainActivity::class.java))
                 return true
             }
-            R.id.menu_second_activity -> {
-                startActivity(Intent(this, SecondActivity::class.java))
+            R.id.menu_lista_activity -> {
+                startActivity(Intent(this, ListaActivity::class.java))
                 return true
             }
             R.id.menu_form_activity -> {
