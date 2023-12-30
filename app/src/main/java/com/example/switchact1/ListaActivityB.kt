@@ -16,7 +16,7 @@ import java.net.URL
 import org.json.JSONArray
 import org.json.JSONException
 
-class SecondActivityB : AppCompatActivity() {
+class ListaActivityB : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
@@ -46,7 +46,7 @@ class SecondActivityB : AppCompatActivity() {
                 // Atualize a UI principal na thread principal usando runOnUiThread
                 runOnUiThread {
                     // Crie um ArrayAdapter para associar os dados ao ListView
-                    val adapter = ArrayAdapter(this@SecondActivityB, android.R.layout.simple_list_item_1, dados)
+                    val adapter = ArrayAdapter(this@ListaActivityB, android.R.layout.simple_list_item_1, dados)
 
                     // Defina o adaptador para o ListView
                     listView.adapter = adapter

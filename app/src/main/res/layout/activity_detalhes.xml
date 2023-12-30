@@ -5,9 +5,9 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <!-- TextView para exibir detalhes do item -->
+    <!-- TextView para exibir o código -->
     <TextView
-        android:id="@+id/text_detalhes"
+        android:id="@+id/text_codigo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
@@ -15,4 +15,24 @@
         android:paddingStart="?android:attr/listPreferredItemPaddingStart"
         android:paddingEnd="?android:attr/listPreferredItemPaddingEnd" />
 
+    <!-- EditText para o nome -->
+    <EditText
+        android:id="@+id/edit_nome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nome"/>
+
+    <!-- EditText para o CPF -->
+    <EditText
+        android:id="@+id/edit_cpf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="CPF"/>
+
+    <!-- Botão para realizar o update -->
+    <Button
+        android:id="@+id/btn_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update"/>
 </LinearLayout>
