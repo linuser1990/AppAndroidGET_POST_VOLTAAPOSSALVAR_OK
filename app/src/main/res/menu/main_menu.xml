@@ -9,15 +9,13 @@
         app:showAsAction="always" />
 
     <item
-        android:id="@+id/menu_dropdown"
-        android:title="Ir Para">
-        <menu>
-            <item
-                android:id="@+id/menu_second_activity"
-                android:title="Second Activity" />
-            <item
-                android:id="@+id/menu_form_activity"
-                android:title="Form Activity" />
-        </menu>
-    </item>
+        android:id="@+id/menu_second_activity"
+        android:title="Second Activity"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_form_activity"
+        android:title="Form Activity"
+        app:showAsAction="never" />
+
 </menu>

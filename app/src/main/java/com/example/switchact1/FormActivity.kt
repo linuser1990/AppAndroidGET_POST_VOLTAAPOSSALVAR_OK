@@ -25,6 +25,9 @@ class FormActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_form)
 
+        //altera o nome no topo da activity
+        setTitle("Cadastro")
+
         val editTextNome = findViewById<EditText>(R.id.editTextNome)
         val editTextCPF = findViewById<EditText>(R.id.editTextCPF)
         val submitButton = findViewById<Button>(R.id.submitButton)
