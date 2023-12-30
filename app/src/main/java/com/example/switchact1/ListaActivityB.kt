@@ -19,7 +19,7 @@ import org.json.JSONException
 class ListaActivityB : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_second)
+        setContentView(R.layout.activity_lista)
 
         val buttonClick = findViewById<Button>(R.id.button)
         buttonClick.setOnClickListener {
