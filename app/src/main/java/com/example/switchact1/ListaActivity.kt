@@ -79,16 +79,11 @@ class ListaActivity : AppCompatActivity() {
 
                 // Atualize a UI principal na thread principal usando runOnUiThread
                 runOnUiThread {
-
                     // Crie um ArrayAdapter para associar os dados ao ListView
-                    val adapter = ArrayAdapter(this@ListaActivity, R.layout.custom_list_item,dados)
-
-                    // Obtenha referência ao ListView
-                    val listView = findViewById<ListView>(R.id.list_view)
+                    val adapter = ArrayAdapter(this@ListaActivity, android.R.layout.simple_list_item_1, dados)
 
                     // Defina o adaptador para o ListView
                     listView.adapter = adapter
-
                 }
             } catch (e: Exception) {
                 // Handle error

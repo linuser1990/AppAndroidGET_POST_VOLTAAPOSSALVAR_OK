@@ -14,11 +14,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val buttonClick = findViewById<Button>(R.id.button_click)
+        val buttonLerImagem = findViewById<Button>(R.id.btnLerImagem)
+
         buttonClick.setOnClickListener {
             val intent = Intent(this, ListaActivity::class.java)
             startActivity(intent)
             println("chamou")
         }
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

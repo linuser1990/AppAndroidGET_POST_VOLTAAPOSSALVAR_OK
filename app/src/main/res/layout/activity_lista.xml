@@ -11,8 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="#FFFFFF"
-        android:divider="#000000"
+        android:background="#090909"
+        android:divider="#CCCCCC"
         android:dividerHeight="1dp"
         android:padding="8dp" />
 
